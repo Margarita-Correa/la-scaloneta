@@ -1,0 +1,123 @@
+/*  estrategia MOBILE LAST  = CELULAR A LO ULTIMO 
+la regla es usar max-width*/
+
+*{
+    margin:0;
+    padding:0;
+}
+
+h1, h2, h3{
+  font-weight: bold;
+  text-align: center;
+}
+p{
+  color: black;
+  text-align: center;
+}
+
+
+.presentacion{
+  background-image: url(../recursos/bandera.jpg);
+  padding: 250px;
+  background-size:cover;
+  background-position: center;
+}
+
+.grilla-padre{
+  display:grid;
+  grid-template-columns:5fr 2fr ;
+  grid-template-rows:1fr 2fr 6fr 1fr;
+  grid-template-areas: 
+    "nav nav" 
+    "header header"
+    "main aside"
+    "footer footer";
+    height: 100vh;
+}
+
+nav { grid-area: nav;
+  background-color:#C4DDFF;
+  border-bottom: 2px #7f8286 solid;
+}
+
+.header {grid-area: header;
+  background-color: #cfd3da;
+  padding-top: 50px;
+}
+.main-index {grid-area: main;}
+
+.aside {grid-area: aside;
+  background-color: #7FB5FF;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.footer {
+  grid-area: footer;
+  background-color: #C4DDFF;
+  border-top: 2px #7f8286 solid;
+}
+
+
+.galeria {  
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+      "img1 img1 img2"
+      "img3 img4 img4"
+      "img5 img5 img6";
+      background-color: rgb(0, 0, 0);
+      width: 100%;
+      align-items: center;
+      justify-items: center;
+  }
+  
+img{
+    width:95%;
+    padding:10px;
+ }
+
+  .img1 { grid-area: img1; }
+  
+  .img2 { grid-area: img2; }
+  
+  .img4 { grid-area: img4; }
+  
+  .img3 { grid-area: img3; }
+  
+  .img5 { grid-area: img5; }
+  
+  .img6 { grid-area: img6; }
+  
+.destacados{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+}
+iframe{
+  padding:10px;
+}
+
+/* esto significa que en dispositivos con ancho de cero a 500 como maximo se va a aplicar lo siguiente sino lo que ya escribi arriba */
+  @media(max-width:500px){
+    .galeria {  
+        display: grid;
+        grid-template-columns: 1fr ;
+        grid-template-areas:
+          "img1"
+          "img2"
+          "img3"
+          "img4"
+          "img5"
+          "img6";
+          background-color: rgb(0, 0, 0);
+          width: 100%;
+          margin: auto;
+      }
+
+  }
